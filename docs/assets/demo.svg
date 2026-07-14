@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="600" viewBox="0 0 1060 600" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">
+  <!-- Terminal rendering of a real binsweep session (output copied from a
+       fixture run on 2026-07-13; paths shortened for width). -->
+  <rect width="1060" height="600" rx="10" fill="#1c2128"/>
+  <rect width="1060" height="34" rx="10" fill="#2d333b"/>
+  <rect y="24" width="1060" height="10" fill="#2d333b"/>
+  <circle cx="20" cy="17" r="6" fill="#f47067"/>
+  <circle cx="40" cy="17" r="6" fill="#e0b543"/>
+  <circle cx="60" cy="17" r="6" fill="#57ab5a"/>
+  <text x="530" y="22" text-anchor="middle" fill="#909dab">binsweep — what is actually living in your bin dirs?</text>
+
+  <g fill="#adbac7">
+    <text x="24" y="64"><tspan fill="#6cb6ff">$</tspan> binsweep scan --stale 1y</text>
+    <text x="24" y="92" fill="#96d0ff">cargo · ~/.cargo/bin — 3 binaries, 2 packages</text>
+    <text x="24" y="116" fill="#909dab">  NAME     PACKAGE    VERSION  ORIGIN     AGE  STATUS</text>
+    <text x="24" y="140">  gone     gone-tool  0.3.0    crates.io  -    <tspan fill="#f47067">missing</tspan></text>
+    <text x="24" y="164">  mystery  ?          ?        ?          40d  <tspan fill="#f47067">orphan</tspan></text>
+    <text x="24" y="188">  rg       ripgrep    14.1.0   crates.io  <tspan fill="#e0b543">2y   ok, stale</tspan></text>
+
+    <text x="24" y="220" fill="#96d0ff">go · ~/go/bin — 2 binaries, 1 package</text>
+    <text x="24" y="244">  gotool   example.test/gotool  v1.6.0  go module (go1.22.4)  300d  <tspan fill="#57ab5a">ok</tspan></text>
+    <text x="24" y="268">  handcopy ?                    ?       ?                     3y 1d <tspan fill="#f47067">orphan, stale</tspan></text>
+
+    <text x="24" y="300" fill="#96d0ff">pipx · ~/.local/bin — 2 binaries, 1 package   npm · ~/.npm-global/bin — 2 binaries</text>
+    <text x="24" y="324">  black    black    24.4.2  pipx venv  25d  <tspan fill="#57ab5a">ok</tspan>     tsc  typescript  5.5.3  <tspan fill="#57ab5a">ok</tspan></text>
+    <text x="24" y="348">  deploy-2019.sh  ?  ?  ?  6y  <tspan fill="#f47067">orphan, stale</tspan>      tsserver  typescript  <tspan fill="#f47067">missing</tspan></text>
+
+    <text x="24" y="384" fill="#e0b543">shadows (1)</text>
+    <text x="24" y="408">  rg: ~/.cargo/bin/rg wins; shadowed: /usr/local/bin/rg</text>
+
+    <text x="24" y="440" fill="#909dab">summary: 7 binaries · 5 packages · 3 orphans · 2 missing · 1 shadowed name · 3 stale</text>
+
+    <text x="24" y="484"><tspan fill="#6cb6ff">$</tspan> binsweep which rg</text>
+    <text x="24" y="512">rg — 2 places on PATH</text>
+    <text x="24" y="536">  1. ~/.cargo/bin/rg  <tspan fill="#57ab5a">← active  (cargo · ripgrep 14.1.0)</tspan></text>
+    <text x="24" y="560">  2. /usr/local/bin/rg  <tspan fill="#e0b543">shadowed</tspan></text>
+  </g>
+</svg>

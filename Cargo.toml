@@ -1,0 +1,18 @@
+[package]
+name = "binsweep"
+version = "0.1.0"
+edition = "2021"
+authors = ["JaydenCJ"]
+rust-version = "1.75"
+description = "Cross-ecosystem inventory of globally installed dev binaries (cargo, go, pipx, npm) with provenance, staleness and PATH-shadowing detection."
+license = "MIT"
+repository = "https://github.com/JaydenCJ/binsweep"
+keywords = ["cli", "inventory", "path", "provenance", "devtools"]
+categories = ["command-line-utilities", "development-tools"]
+
+[dependencies]
+# None. binsweep is std-only by design: offline, deterministic, zero supply chain.
+
+[profile.release]
+strip = true
+lto = true
