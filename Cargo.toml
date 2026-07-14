@@ -2,7 +2,7 @@
 name = "binsweep"
 version = "0.1.0"
 edition = "2021"
-authors = ["JaydenCJ"]
+authors = ["JaydenCJ <aisingioro.kiyon@gmail.com>"]
 rust-version = "1.75"
 description = "Cross-ecosystem inventory of globally installed dev binaries (cargo, go, pipx, npm) with provenance, staleness and PATH-shadowing detection."
 license = "MIT"
